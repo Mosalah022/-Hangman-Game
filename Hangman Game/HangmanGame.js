@@ -173,7 +173,11 @@ document.addEventListener("click", (e) => {
 
 // Win Game Function
    function winGame() { 
-   
+       
+  //Win Music     
+document.getElementById('success').pause();
+document.getElementById('win').play();  
+       
   // Create Popup Div
   let div = document.createElement("div");
 
@@ -198,12 +202,12 @@ document.addEventListener("click", (e) => {
 
 // End Game Function
 function endGame() {
-
+        
   // Create Popup Div
   let div = document.createElement("div");
 
   // Create Text
-  let divText = document.createTextNode(`Game Over, The Word Is ${randomValueValue}`);
+  let divText = document.createTextNode(`Game Over, The Word Is: ${randomValueValue}`);
 
   // Append Text To Div
   div.appendChild(divText);
@@ -213,13 +217,11 @@ function endGame() {
 
   // Append To The Body
   document.body.appendChild(div);
-    
     // lose music 
       document.getElementById("gameover").play();
-    
      //can't clicked 
        lettersContainer.classList.add("finished");
-
+ 
 }
 
 
